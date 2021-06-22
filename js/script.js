@@ -142,7 +142,7 @@ function iconeHtml(filter) {
     });
 }
 
-
+//-----------------------------------//
 
 iconeHtml("all");
 const element = document.getElementsByClassName("tipo")[0];
