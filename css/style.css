@@ -1,0 +1,68 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: rgb(41, 177, 221);
+    padding-top: 50px;
+}
+
+.selettore {
+    background-color: rgb(41, 177, 221);
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.icons-box {
+    background-color: rgb(221, 221, 221);
+}
+
+.single-icons {
+    flex-basis: calc(100% / 5);
+    max-width: calc(100% / 5);
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+
+.single-icons-inner {
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
+    border-radius: 5px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.single-icons-inner .icon {
+    width: 100%;
+    font-size: 30px;
+}
+
+.single-icons-inner .name {
+    text-transform: uppercase;
+    font-size: 12px;
+    width: 100%;
+}
+
+/* Milestone 2
+Coloriamo le icone per tipo */
+
+.icon.animal {
+    color: blue;
+}
+
+.icon.user {
+    color: purple;
+}
+
+.icon.vegetable {
+    color: orange;
+}
