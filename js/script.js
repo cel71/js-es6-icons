@@ -105,32 +105,51 @@ const icons = [
 	}
 ];
 
-// Milestone 1
-// Partendo dalla seguente struttura dati , 
-// mostriamo in pagina tutte le icone disponibili come da layout.
+// funzioni:
 
-// Milestone 2
-// Coloriamo le icone per tipo
-// Javascript e css
+function filtri(chosenItem, originalList) {
+    return originalList.filter((icon) => {
+        if (chosenItem === "all") {
+            return true;
+        }
+        if (chosenItem === icon.type) {
+            return true;
+        }
 
-icons.forEach((icon) => {
-    const {name, prefix, family, type} = icon;
-    document.getElementsByClassName("icons-box2")[0].innerHTML += `
-    <div class="single-icons col">
-        <div class="single-icons-inner">
-            <div class="icon ${type}">
-                <i class="${family} ${prefix}${name}"></i>
-            </div>
-            <div class="name">
-                ${name}
+        return false;
+    });
+}
+
+function iconeHtml(filter) {
+    const iconsFiltri = filtri(filter, icons);
+
+    document.getElementsByClassName("icons-box2")[0].innerHTML = "";
+
+    iconsFiltri.forEach((icon) => {
+        const {name, prefix, family, type} = icon;
+        document.getElementsByClassName("icons-box2")[0].innerHTML += `
+        <div class="single-icons col">
+            <div class="single-icons-inner">
+                <div class="icon ${type}">
+                    <i class="${family} ${prefix}${name}"></i>
+                </div>
+                <div class="name">
+                    ${name}
+                </div>
             </div>
         </div>
-    </div>
-    `
+        `
+    });
+}
+
+
+
+iconeHtml("all");
+const element = document.getElementsByClassName("tipo")[0];
+element.addEventListener("change", (event) => {
+    iconeHtml(event.target.value);
 });
 
-// Milestone 3
-// Creiamo una select con i tipi di icone e usiamola per filtrare le icone
 
 
 
